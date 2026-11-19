@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: search-service
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        spring:
+          json:
+            trusted.packages: "*"
+            use.type.headers: false
+            value.default.type: java.util.Map
+      auto-offset-reset: earliest
+  main:
+    banner-mode: off
+  elasticsearch:
+    uris: http://localhost:9200
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+event:
+  topic:
+    application-created: "application.created"
+    application-updated: "application.updated"
+    application-deleted: "application.deleted"
+  group:
+    application-search-group: "applicaiton.search.cgroup"
+server:
+  port: 9081

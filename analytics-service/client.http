@@ -1,0 +1,5 @@
+### GET Summary
+GET http://localhost:8082/api/analytics/summary
+
+### Get Status Summary
+GET http://localhost:8082/api/analytics/status

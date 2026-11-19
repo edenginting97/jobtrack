@@ -1,0 +1,27 @@
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Documentation
+HELP.md
+README.md
+
+# Test
+src/test/
+
+# Docker
+.dockerignore
+Dockerfile
+docker-compose.yml

@@ -1,0 +1,11 @@
+### Search
+GET http://localhost:8081/api/search/applications
+
+### Create index
+PUT http://localhost:9200/job-applications
+
+### Clear index
+DELETE http://localhost:9200/job-applications
+
+###
+GET http://localhost:9200/job-applications/_search

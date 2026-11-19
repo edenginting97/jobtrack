@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: analytics-service
+  datasource:
+    username: postgres
+    url: jdbc:postgresql://localhost:5433/postgres
+    driver-class-name: org.postgresql.Driver
+    password: postgres
+  main:
+    banner-mode: off
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+      ddl-auto: update
+    show-sql: true
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        spring:
+          json:
+            trusted.packages: "*"
+            use.type.headers: false
+            value.default.type: java.util.Map
+      auto-offset-reset: earliest
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      connect-timeout: 2s
+event:
+  topic:
+    application-created: "application.created"
+    application-updated: "application.updated"
+  group:
+    application-analytics-group: "applicaiton.analytics.cgroup"
+server:
+  port: 9082

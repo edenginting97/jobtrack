@@ -1,0 +1,31 @@
+### Get Applications
+GET http://localhost:9080/api/applications
+
+### Get Status History
+GET http://localhost:9080/api/applications/{id}/history
+
+### Get Application
+GET http://localhost:9080/api/applications/{id}
+
+### Create Application
+POST http://localhost:8080/api/applications
+Content-Type: application/json
+
+{
+  "companyName": "Company Name 3",
+  "position": "Position",
+  "location": "Location",
+  "employmentType": "Employment Type",
+  "salary": 125000
+}
+
+### Change Status
+PATCH http://localhost:8080/api/applications/16
+Content-Type: application/json
+
+{
+  "status": "REJECTED"
+}
+
+### Delete application
+DELETE http://localhost:9080/api/applications/7
